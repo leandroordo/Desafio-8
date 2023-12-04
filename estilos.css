@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #202020;
+  font-family: Roboto, sans-serif;
+}
+
+h1 {
+  font-family: Poppins;
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  border-top: 19px solid #4d6d63;
+  border-right: 19px solid #202020;
+  border-bottom: 19px solid #4d6d63;
+  border-left: 19px solid #202020;
+  text-align: center;
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4px;
+}
+
+fieldset {
+  background-color: #d6e2de;
+  padding: 16px 24px;
+  border: 2px solid #4d6d63;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+
+.fieldset-wrapper {
+  margin-bottom: 54px;
+}
+
+.fieldset-wrapper:last-child {
+  margin-bottom: 36px;
+}
+
+.fieldset-wrapper::after {
+  display: block;
+  content: "";
+  position: relative;
+  left: 0;
+  bottom: -36px;
+  max-width: 320px;
+  width: 40%;
+  border-bottom: 16px dotted #a6c1b9;
+  margin: 0 auto;
+}
+
+.fieldset-wrapper:last-child::after {
+  content: "";
+  display: none;
+  position: relative;
+  left: 0;
+  max-width: 320px;
+  width: 40%;
+  border-bottom: 16px dotted #a6c1b9;
+  margin: 0 auto;
+}
+
+fieldset:focus-within {
+  background-color: #a6c1b9;
+}
+
+fieldset:focus-within legend {
+  background-color: #2b3d37;
+}
+
+fieldset legend {
+  background-color: #4d6d63;
+  padding: 10px;
+  border-radius: inherit;
+  font-weight: 700;
+  font-size: 23px;
+  font-variant: small-caps;
+  color: white;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-item label,
+.form-checkbox-footer label {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 0px;
+  font-size: 19px;
+  display: block;
+  font-weight: 400;
+}
+
+.leftAlign {
+  text-align: left !important;
+  justify-content: start !important;
+}
+
+.form-item p {
+  text-align: left;
+  margin-top: 18px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  display: block;
+  font-weight: 400;
+}
+
+.form-item input[type="text"],
+.form-item input[type="tel"],
+.form-item input[type="email"],
+.form-item select,
+.form-item textarea {
+  display: block;
+  width: 100%;
+  max-width: 544px;
+  margin: 12px auto;
+  font-size: 18px;
+  font-weight: 400;
+  /*line-height: 1.7;*/
+  height: 40px;
+  padding: 4px;
+  text-align: right;
+  color: #a6c1b9;
+  border: 1px solid #4d6d63;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+
+.form-item select {
+  padding: 8px 0;
+  text-align: left;
+}
+
+.form-item textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-item input[type="text"]:focus,
+.form-item input[type="tel"]:focus,
+.form-item input[type="email"]:focus,
+.form-item select:focus,
+.form-item textarea:focus {
+  /* En el video, el select no cambia de color en el focus, pero queda mejor que sí cambie 😉 */
+  background-color: #4d6d63;
+  border: 1px solid black;
+}
+
+input::placeholder {
+  color: #8bb4c2;
+  opacity: 1;
+}
+
+/*Radio button and checkbox styles*/
+.form-checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+.form-checkbox label {
+  margin-right: 6px;
+}
+
+input[type="radio"] {
+  height: 12px;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  margin-right: 3px;
+}
+
+/*footer*/
+.form-footer {
+  color: white;
+  text-align: left;
+}
+
+.form-checkbox-footer {
+  margin-bottom: 12px;
+}
+
+.form-checkbox-footer label {
+  text-align: left;
+}
+
+.form-item .footer-label {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.footer-buttons {
+  text-align: center;
+  margin: 32px;
+}
+
+.footer-buttons button {
+  background-color: #2b3d37;
+  border-radius: 4px;
+  border: 1px solid #4d6d63;
+  display: inline-block;
+  cursor: pointer;
+  color: #a6c1b9;
+  font-size: 18px;
+  padding: 15px 24px;
+  text-decoration: none;
+  margin-right: 36px;
+}
+
+.footer-buttons button:hover {
+  background-color: #d6e2de;
+  color: #4d6d63;
+}
+
+.footer-buttons button:active {
+  position: relative;
+  top: 1px;
+}
+
+.footer-buttons button:last-child {
+  margin-right: 0;
+}
