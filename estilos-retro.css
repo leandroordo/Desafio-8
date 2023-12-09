@@ -1,25 +1,228 @@
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script:400,700);
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #c8e7d8;
+  background-color: #eee6d4;
   color: #4e5e72;
   text-align: center;
-  font-family: monospace;
-  overflow: hidden;
-}
-
-h1,
-p {
-  margin: 0;
-  padding: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1 {
+  color: #474447;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  float: left;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+h1:after {
+  content: "";
+  position: absolute;
+  background-color: #474544;
+  z-index: 1;
+  left: 45%;
+  top: 100px;
+  width: 10%;
+  height: 2px;
+}
+
+.inner {
+  max-width: 620px;
+  margin: auto;
+  background: url("../images/bg-retro.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: solid 3px #a29a87;
+  margin: 60px auto;
+  position: relative;
+}
+
+form {
+  width: 100%;
+  padding: 1.5em;
+}
+
+form fieldset {
+  border: 0;
+  padding: 0;
+}
+
+form fieldset legend {
+  display: none;
+}
+
+.emoji {
+  display: none;
+}
+
+input[type="text"],
+[type="email"],
+[type="tel"],
+select,
+textarea {
+  background: none;
+  border: none;
+  border-bottom: solid 1px #474544;
+  color: #474544;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0em 0 1.9em 0;
+  padding: 0 0 0.8em 0;
+  text-transform: uppercase;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+textarea {
+  line-height: 100%;
+  height: 90px;
+  resize: none;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+[type="email"]:focus,
+[type="tel"]:focus,
+textarea:focus {
+  outline: none;
+  padding: 0 0 0.8em 0;
+}
+
+select {
+  background: url(../images/flecha-abajo.png) no-repeat right;
+  outline: none;
+  appearance: none;
+}
+
+.form-checkbox {
+  margin: 0.8em 0 1.9em 0;
+  padding: 0 0 0.8em 0;
+}
+
+.form-footer,
+.footer-buttons {
+  margin: 1em 0 1em 0;
+}
+
+.footer-label {
+  font-size: 75%;
+}
+
+.footer-buttons button {
+  background: none;
+  border: solid 1px #474544;
+  color: #474544;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875em;
+  font-weight: 400;
+  outline: none;
+  padding: 20px 35px;
+  margin-right: 20px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.footer-buttons button:hover {
+  background: #474544;
+  color: #f2f3eb;
+}
+
+.footer-buttons button:last-child {
+  margin-right: 0;
+}
+
+@media (min-width: 960px) {
+  h1 {
+    font-size: 33px;
+    letter-spacing: 8px;
+  }
+
+  h1:after {
+    left: 45%;
+    top: 120px;
+    width: 10%;
+    height: 3px;
+  }
+}
+
+.boton-configuracion {
+  border: none;
+  display: block;
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  background: rgb(184, 94, 3);
+  color: white;
+  text-align: center;
+  top: 50%;
+  right: 0;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: -0.25rem 0 1rem rgba(0, 0, 0, 0.15);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   font-size: 2rem;
-  font-family: "Dancing Script";
+  transition: transform 1s;
+  margin-top: 6px;
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 20rem;
+  height: 100%;
+  background: #ffffff;
+  color: #495057;
+  border: 0 none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .sidebar-header {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sidebar-header button {
+  width: 2rem;
+  height: 2rem;
+  color: #6c757d;
+  border: 0 none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sidebar-header button:hover {
+  color: #343a40;
+  border-color: transparent;
+  background: #e9ecef;
 }
