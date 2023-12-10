@@ -14,7 +14,7 @@
   <body>
     <div class="main">
       <div class="inner">
-        <form action="#">
+        <form action="#" onsubmit="return validarCampos()">
           <h1>
             Vení al Gym!
             <span class="emoji">💪🏼</span>
@@ -94,7 +94,6 @@
                     id="telefono"
                     placeholder="Código de área y número"
                     value=""
-                    required
                   />
                 </div>
                 <div class="form-item">
@@ -170,6 +169,7 @@
                     type="checkbox"
                     name="condiciones"
                     value="condiciones"
+                    required
                   />
                   Acepto las condiciones *
                 </label>
@@ -292,5 +292,6 @@
       </div>
     </div>
     <script src="./scripts/sidebar.js"></script>
+    <script src="./scripts/validar.js"></script>
   </body>
 </html>
