@@ -12,7 +12,7 @@ body {
 }
 
 .main {
-  background-image: url("./images/bg-form.jpg");
+  background-image: url("../images/bg-form.jpg");
   min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -87,11 +87,11 @@ form fieldset legend {
   display: block;
 }
 
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-textarea,
-select {
+.form-item input[type="text"],
+.form-item input[type="tel"],
+.form-item input[type="email"],
+.form-item textarea,
+.form-item select {
   border: 1px solid #ccc;
   display: block;
   width: 100%;
@@ -104,7 +104,7 @@ select {
   font-size: 13px;
 }
 
-textarea {
+.form-item textarea {
   resize: vertical;
   min-height: 80px;
 }
@@ -113,12 +113,12 @@ textarea {
   outline: none;
 }
 
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="email"]:focus,
-textarea:focus,
-select:focus,
-button:focus {
+.form-item input[type="text"]:focus,
+.form-item input[type="tel"]:focus,
+.form-item input[type="email"]:focus,
+.form-item textarea:focus,
+.form-item select:focus,
+.form-item button:focus {
   border: 1px solid #ae3c33;
 }
 
@@ -139,7 +139,7 @@ input[type="checkbox"] {
   margin: 12px 12px 0 0;
 }
 
-button {
+.footer-buttons button {
   border: none;
   width: 180px;
   height: 40px;
@@ -167,7 +167,7 @@ button {
   transition-duration: 0.5s;
 }
 
-button:before {
+.footer-buttons button:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -188,14 +188,14 @@ button:before {
   transition-timing-function: ease-out;
 }
 
-button:hover:before {
+.footer-buttons button:hover:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
   transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
 }
 
-button[type="reset"] {
+.footer-buttons button[type="reset"] {
   display: none;
 }
 

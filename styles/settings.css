@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.boton-configuracion {
+  border: none;
+  display: block;
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  background: #6366f1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  right: 0;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: -0.25rem 0 1rem rgba(0, 0, 0, 0.15);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 2rem;
+  transition: transform 1s;
+  margin-top: 6px;
+}
+
+.sidebar {
+  position: fixed;
+  right: -320px;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  background: #ffffff;
+  color: #495057;
+  border: 0 none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease-in-out;
+}
+
+.sidebar .sidebar-header {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sidebar-header button {
+  width: 2rem;
+  height: 2rem;
+  color: #6c757d;
+  border: 0 none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sidebar-header button:hover {
+  color: #343a40;
+  border-color: transparent;
+  background: #e9ecef;
+}
+
+.sidebar-contenido {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.sidebar-contenido h5 {
+  font-size: 1rem;
+  text-align: left;
+  margin: 1.5rem 0 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: black;
+}
+
+.sidebar-config-item {
+  margin-bottom: 24px;
+}
+
+.sidebar-list select {
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  border: solid 1px #6366f1;
+  border-radius: 12px;
+  display: inline-flex;
+  padding: 12px;
+  border-radius: 12px;
+  background: #6366f1;
+  width: 200px;
+  height: 46px;
+}
+
+.boton-icono {
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  text-decoration: none;
+  border: solid 1px #6366f1;
+  border-radius: 12px;
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: #6366f1;
+  align-items: center;
+  padding: 0;
+  width: 200px;
+  height: 46px;
+}
+.boton-icono:hover {
+  background: #4e46e5;
+}
+.boton-icono-text {
+  position: relative;
+  padding: 14px 18px;
+}
+.boton-icono-icon {
+  position: relative;
+  border-right: 1px solid #ffffff29;
+  box-shadow: inset rgb(0 0 0 / 14%) -1px 0 0;
+  padding: 14px 10px;
+}
+.boton-icono-checked {
+  border: solid 1px #0b0eaa;
+  background: #0c0d67;
+}

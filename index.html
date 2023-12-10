@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Afiliación</title>
-    <!-- <link rel="stylesheet" href="estilos.css" /> -->
-    <!-- <link rel="stylesheet" href="estilos-futuro.css" /> -->
-    <link rel="stylesheet" href="estilos-retro.css" />
+    <link rel="stylesheet" href="./styles/estilos.css" />
+    <!-- <link rel="stylesheet" href="./styles/estilos-futuro.css" /> -->
+    <!-- <link rel="stylesheet" href="./styles/estilos-retro.css" /> -->
+
+    <!--No comentar la hoja de estilos llamada settings.css-->
+    <link rel="stylesheet" href="./styles/settings.css" />
   </head>
   <body>
     <div class="main">
@@ -199,12 +202,17 @@
         </form>
       </div>
     </div>
-    <button class="boton-configuracion" type="button">
+    <button
+      class="boton-configuracion"
+      type="button"
+      id="boton-configuracion"
+      onclick="showConfig()"
+    >
       <span class="material-symbols-outlined"> settings </span>
     </button>
-    <div class="sidebar">
+    <div class="sidebar" id="sidebarDiv">
       <div class="sidebar-header">
-        <button type="button">
+        <button type="button" onclick="closeConfig()">
           <svg
             width="14"
             height="14"
@@ -220,492 +228,69 @@
         </button>
       </div>
       <div class="sidebar-contenido" data-pc-section="content">
-        <h5>Scale</h5>
-        <div class="flex align-items-center">
+        <h5>Configuración de estilos</h5>
+        <div class="sidebar-config-item">
           <button
-            class="p-button p-component w-2rem h-2rem mr-2 p-button-icon-only p-button-text p-button-rounded"
             type="button"
-            data-pc-name="button"
-            data-pc-section="root"
+            class="boton-icono"
+            onclick="cambiarEstiloSiguiente()"
           >
-            <span
-              class="p-button-icon p-c pi pi-minus"
-              data-pc-section="icon"
-            ></span
-            ><span class="p-button-label p-c">&nbsp;</span>
-          </button>
-          <div class="flex gap-2 align-items-center">
-            <i class="pi pi-circle-fill text-300"></i
-            ><i class="pi pi-circle-fill text-300"></i
-            ><i class="pi pi-circle-fill text-primary-500"></i
-            ><i class="pi pi-circle-fill text-300"></i
-            ><i class="pi pi-circle-fill text-300"></i>
-          </div>
-          <button
-            class="p-button p-component w-2rem h-2rem ml-2 p-button-icon-only p-button-text p-button-rounded"
-            type="button"
-            data-pc-name="button"
-            data-pc-section="root"
-          >
-            <span
-              class="p-button-icon p-c pi pi-plus"
-              data-pc-section="icon"
-            ></span
-            ><span class="p-button-label p-c">&nbsp;</span>
+            <span class="boton-icono-icon">
+              <i class="fa fa-bookmark-o"></i>
+            </span>
+            <span class="boton-icono-text">
+              <span>Cambiar estilo</span>
+            </span>
           </button>
         </div>
-        <h5>Menu Type</h5>
-        <div class="flex">
-          <div class="field-radiobutton flex-1">
-            <div
-              class="p-radiobutton p-component p-radiobutton-checked"
-              data-pc-name="radiobutton"
-              data-pc-section="root"
+
+        <div class="sidebar-config-item">
+          <button
+            type="button"
+            class="boton-icono"
+            onclick="cambiarEstiloRandom()"
+          >
+            <span class="boton-icono-icon">
+              <i class="fa fa-random"></i>
+            </span>
+            <span class="boton-icono-text">
+              <span>Aleatorio</span>
+            </span>
+          </button>
+        </div>
+
+        <div class="sidebar-config-item">
+          <div class="sidebar-list">
+            <select
+              name="sidebar-list"
+              id="sidebar-list"
+              onchange="onItemSelected()"
             >
-              <div
-                class="p-hidden-accessible"
-                data-pc-section="hiddeninputwrapper"
-              >
-                <input
-                  id="mode1"
-                  data-pc-section="hiddeninput"
-                  type="radio"
-                  checked=""
-                  name="menuMode"
-                />
-              </div>
-              <div
-                class="p-radiobutton-box p-highlight"
-                data-pc-section="input"
-              >
-                <div class="p-radiobutton-icon" data-pc-section="icon"></div>
-              </div>
-            </div>
-            <label for="mode1">Static</label>
-          </div>
-          <div class="field-radiobutton flex-1">
-            <div
-              class="p-radiobutton p-component"
-              data-pc-name="radiobutton"
-              data-pc-section="root"
-            >
-              <div
-                class="p-hidden-accessible"
-                data-pc-section="hiddeninputwrapper"
-              >
-                <input
-                  id="mode2"
-                  data-pc-section="hiddeninput"
-                  type="radio"
-                  name="menuMode"
-                />
-              </div>
-              <div class="p-radiobutton-box" data-pc-section="input">
-                <div class="p-radiobutton-icon" data-pc-section="icon"></div>
-              </div>
-            </div>
-            <label for="mode2">Overlay</label>
+              <option value="sin-estilo">Sin estilo</option>
+              <option value="normal">Normal</option>
+              <option value="futurista">Futurista</option>
+              <option value="retro">Retro</option>
+            </select>
           </div>
         </div>
-        <h5>Input Style</h5>
-        <div class="flex">
-          <div class="field-radiobutton flex-1">
-            <div
-              class="p-radiobutton p-component p-radiobutton-checked"
-              data-pc-name="radiobutton"
-              data-pc-section="root"
-            >
-              <div
-                class="p-hidden-accessible"
-                data-pc-section="hiddeninputwrapper"
-              >
-                <input
-                  id="outlined_input"
-                  data-pc-section="hiddeninput"
-                  type="radio"
-                  checked=""
-                  name="inputStyle"
-                />
-              </div>
-              <div
-                class="p-radiobutton-box p-highlight"
-                data-pc-section="input"
-              >
-                <div class="p-radiobutton-icon" data-pc-section="icon"></div>
-              </div>
-            </div>
-            <label for="outlined_input">Outlined</label>
-          </div>
-          <div class="field-radiobutton flex-1">
-            <div
-              class="p-radiobutton p-component"
-              data-pc-name="radiobutton"
-              data-pc-section="root"
-            >
-              <div
-                class="p-hidden-accessible"
-                data-pc-section="hiddeninputwrapper"
-              >
-                <input
-                  id="filled_input"
-                  data-pc-section="hiddeninput"
-                  type="radio"
-                  name="inputStyle"
-                />
-              </div>
-              <div class="p-radiobutton-box" data-pc-section="input">
-                <div class="p-radiobutton-icon" data-pc-section="icon"></div>
-              </div>
-            </div>
-            <label for="filled_input">Filled</label>
-          </div>
-        </div>
-        <h5>Ripple Effect</h5>
-        <div
-          class="p-inputswitch p-component"
-          role="checkbox"
-          aria-checked="false"
-          data-pc-name="inputswitch"
-          data-pc-section="root"
-        >
-          <div class="p-hidden-accessible" data-pc-section="hiddeninputwrapper">
-            <input
-              role="switch"
-              aria-checked="false"
-              data-pc-section="hiddeninput"
-              type="checkbox"
-            />
-          </div>
-          <span class="p-inputswitch-slider" data-pc-section="slider"></span>
-        </div>
-        <h5>Bootstrap</h5>
-        <div class="grid">
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/bootstrap4-light-blue.svg"
-                class="w-2rem h-2rem"
-                alt="Bootstrap Light Blue"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/bootstrap4-light-purple.svg"
-                class="w-2rem h-2rem"
-                alt="Bootstrap Light Purple"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/bootstrap4-dark-blue.svg"
-                class="w-2rem h-2rem"
-                alt="Bootstrap Dark Blue"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/bootstrap4-dark-purple.svg"
-                class="w-2rem h-2rem"
-                alt="Bootstrap Dark Purple"
-              />
-            </button>
-          </div>
-        </div>
-        <h5>Material Design</h5>
-        <div class="grid">
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/md-light-indigo.svg"
-                class="w-2rem h-2rem"
-                alt="Material Light Indigo"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/md-light-deeppurple.svg"
-                class="w-2rem h-2rem"
-                alt="Material Light DeepPurple"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/md-dark-indigo.svg"
-                class="w-2rem h-2rem"
-                alt="Material Dark Indigo"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/md-dark-deeppurple.svg"
-                class="w-2rem h-2rem"
-                alt="Material Dark DeepPurple"
-              />
-            </button>
-          </div>
-        </div>
-        <h5>Material Design Compact</h5>
-        <div class="grid">
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/md-light-indigo.svg"
-                class="w-2rem h-2rem"
-                alt="Material Light Indigo"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/md-light-deeppurple.svg"
-                class="w-2rem h-2rem"
-                alt="Material Light Deep Purple"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/md-dark-indigo.svg"
-                class="w-2rem h-2rem"
-                alt="Material Dark Indigo"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/md-dark-deeppurple.svg"
-                class="w-2rem h-2rem"
-                alt="Material Dark Deep Purple"
-              />
-            </button>
-          </div>
-        </div>
-        <h5>Tailwind</h5>
-        <div class="grid">
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/tailwind-light.png"
-                class="w-2rem h-2rem"
-                alt="Tailwind Light"
-              />
-            </button>
-          </div>
-        </div>
-        <h5>Fluent UI</h5>
-        <div class="grid">
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/fluent-light.png"
-                class="w-2rem h-2rem"
-                alt="Fluent Light"
-              />
-            </button>
-          </div>
-        </div>
-        <h5>PrimeOne Design - 2022</h5>
-        <div class="grid">
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/lara-light-indigo.png"
-                class="w-2rem h-2rem"
-                alt="Lara Light Indigo"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/lara-light-blue.png"
-                class="w-2rem h-2rem"
-                alt="Lara Light Blue"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/lara-light-purple.png"
-                class="w-2rem h-2rem"
-                alt="Lara Light Purple"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/lara-light-teal.png"
-                class="w-2rem h-2rem"
-                alt="Lara Light Teal"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/lara-dark-indigo.png"
-                class="w-2rem h-2rem"
-                alt="Lara Dark Indigo"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/lara-dark-blue.png"
-                class="w-2rem h-2rem"
-                alt="Lara Dark Blue"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/lara-dark-purple.png"
-                class="w-2rem h-2rem"
-                alt="Lara Dark Purple"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/lara-dark-teal.png"
-                class="w-2rem h-2rem"
-                alt="Lara Dark Teal"
-              />
-            </button>
-          </div>
-        </div>
-        <h5>PrimeOne Design - 2021</h5>
-        <div class="grid">
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/saga-blue.png"
-                class="w-2rem h-2rem"
-                alt="Saga Blue"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/saga-green.png"
-                class="w-2rem h-2rem"
-                alt="Saga Green"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/saga-orange.png"
-                class="w-2rem h-2rem"
-                alt="Saga Orange"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/saga-purple.png"
-                class="w-2rem h-2rem"
-                alt="Saga Purple"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/vela-blue.png"
-                class="w-2rem h-2rem"
-                alt="Vela Blue"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/vela-green.png"
-                class="w-2rem h-2rem"
-                alt="Vela Green"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/vela-orange.png"
-                class="w-2rem h-2rem"
-                alt="Vela Orange"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/vela-purple.png"
-                class="w-2rem h-2rem"
-                alt="Vela Purple"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/arya-blue.png"
-                class="w-2rem h-2rem"
-                alt="Arya Blue"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/arya-green.png"
-                class="w-2rem h-2rem"
-                alt="Arya Green"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/arya-orange.png"
-                class="w-2rem h-2rem"
-                alt="Arya Orange"
-              />
-            </button>
-          </div>
-          <div class="col-3">
-            <button class="p-link w-2rem h-2rem">
-              <img
-                src="/layout/images/themes/arya-purple.png"
-                class="w-2rem h-2rem"
-                alt="Arya Purple"
-              />
-            </button>
-          </div>
+
+        <div class="sidebar-config-item">
+          <button
+            type="button"
+            class="boton-icono"
+            id="boton-recordar"
+            onClick="cambiarRecordar()"
+          >
+            <span class="boton-icono-icon">
+              <i class="fa fa-bell"></i>
+            </span>
+            <span class="boton-icono-text">
+              <span>Recordar</span>
+            </span>
+          </button>
         </div>
       </div>
     </div>
+    <script src="./scripts/sidebar.js"></script>
   </body>
 </html>
